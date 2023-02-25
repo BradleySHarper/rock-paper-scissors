@@ -1,8 +1,6 @@
 
 function getComputerChoice(){
-    let rock = "rock";
-    let paper = "paper";
-    let scissors = "scissors";
+
     let rand = Math.floor(Math.random() * 3);
     if (rand === 0){
         return rock;
@@ -15,4 +13,26 @@ function getComputerChoice(){
     }
 
 } 
-console.log(getComputerChoice());
+
+function playRound(playerSelection, computerSelection){
+    
+    let isEqual = playerSelection.toLowerCase();
+    if (isEqual === computerSelection){
+        return "Tie Game!"
+    }
+    if (computerSelection === paper){
+        return "You Lose! Paper beats Rock!"
+    }
+    if (computerSelection === scissors){
+        return "You Win! Rock beats Scissors!"
+    }
+
+
+}
+
+const rock = "rock";
+const paper = "paper";
+const scissors = "scissors";
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
